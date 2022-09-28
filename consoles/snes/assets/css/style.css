@@ -233,6 +233,22 @@ body {
   transform: translateY(-50%);
 }
 
+.return {
+  position: absolute;
+  top: 0vh;
+  left: 40.5vw;
+  width: 100%;
+  font-size: 0.85em;
+  border-radius: 5px;
+  font-weight: bold;
+  color:rgba(0, 0, 0, 1);
+} .return .link {
+  text-decoration: none !important;
+  color:rgba(0, 0, 0, 1) !important;
+} .return .link:hover {
+  color: #8067e5 !important;
+}
+
 .credit {
   position: absolute;
   bottom: 0vh;
