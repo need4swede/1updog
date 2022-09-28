@@ -97,14 +97,20 @@ swiper.on('transitionEnd', function() {
 //////////////////// UPDATE BACKGROUND - START /////////////////////////////
 
 function changeBackground(slideIndex) {
-    // NES
     if (slideIndex === 0) {
-        document.body.style.background = "#dd0c04";
+        document.body.style.backgroundImage = "url(./assets/images/mariobros-bg.jpg)";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundRepeat = "no-repeat";
     }
-    // SNES
     if (slideIndex === 1) {
-        document.body.style.background = "#8067e5";
+        document.body.style.backgroundImage = "url(./assets/images/zelda-bg.jpg)";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundRepeat = "no-repeat";
     }
 }
 
 //////////////////// UPDATE BACKGROUND - END //////////////////////////////
+
+

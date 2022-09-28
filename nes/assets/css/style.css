@@ -10,6 +10,14 @@ body {
   display: flex;
   transition: background  1s;
 }
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 106.5%;
+  z-index: -1;
+}
 .blog-slider {
   width: 95%;
   position: relative;
@@ -186,10 +194,11 @@ body {
   color: #4e4a67;
   margin-bottom: 30px;
   line-height: 1.5em;
+  font-size: 0.8em;
 }
 .blog-slider__button {
   display: inline-flex;
-  background-image: linear-gradient(147deg, #6c6c6c 0%, #000000 80%);
+  background-image: linear-gradient(147deg, #ffffff 0%, #ff0800 30%);
   padding: 15px 35px;
   border-radius: 50px;
   color: #fff;
@@ -227,8 +236,8 @@ body {
 .credit {
   position: relative;
   top: 24vh;
-  left: -1vw;
-  width: 14em;
+  left: -2vw;
+  width: 26em;
   font-size: 0.5em;
   color:rgba(0, 0, 0, 0.4)
 }
@@ -262,7 +271,7 @@ body {
 }
 .blog-slider__pagination .swiper-pagination-bullet-active {
   opacity: 1;
-  background: #000000;
+  background: #dd0c04;
   height: 30px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
 }
