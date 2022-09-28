@@ -234,13 +234,29 @@ body {
 }
 
 .credit {
-  position: relative;
-  top: 24vh;
-  left: -2vw;
-  width: 26em;
+  position: absolute;
+  bottom: 0vh;
+  left: 33vw;
+  width: 120px;
   font-size: 0.5em;
-  color:rgba(0, 0, 0, 0.4)
+  padding: 0.2em 0.8em;
+  border-radius: 5px;
+  color:rgba(0, 0, 0, 0.5);
 }
+
+@media screen and (max-width: 1480px) {
+  .credit {
+    position: absolute;
+    bottom: -1vh;
+    left: 43vw;
+    width: 120px;
+    font-size: 0.5em;
+    padding: 0.2em 0.8em;
+    border-radius: 5px;
+    color:rgba(0, 0, 0, 0.5);
+  }
+}
+
 @media screen and (max-width: 768px) {
   .blog-slider__pagination {
     transform: translateX(-50%);
