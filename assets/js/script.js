@@ -97,14 +97,18 @@ swiper.on('transitionEnd', function() {
 //////////////////// UPDATE BACKGROUND - START /////////////////////////////
 
 function changeBackground(slideIndex) {
-    // NES
-    if (slideIndex === 0) {
-        document.body.style.background = "#dd0c04";
-    }
-    // SNES
-    if (slideIndex === 1) {
-        document.body.style.background = "#8067e5";
-    }
+  // NES
+  if (slideIndex === 0) {
+    let bullet = document.querySelector(".blog-slider__pagination .swiper-pagination-bullet-active");
+    document.body.style.background = "#dd0c04";
+    bullet.style.background = "#dd0c04"
+  }
+  // SNES
+  if (slideIndex === 1) {
+    let bullet = document.querySelector(".blog-slider__pagination .swiper-pagination-bullet-active");
+    document.body.style.background = "#8067e5";
+    bullet.style.background = "#8067e5"
+  }
 }
 
 //////////////////// UPDATE BACKGROUND - END //////////////////////////////
