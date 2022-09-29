@@ -1,3 +1,15 @@
+// PRELOAD IMAGES
+imageList = [
+  "./assets/images/marioworld1-bg.jpg",
+  "./assets/images/spaceinvaders-bg.jpg"
+  ]
+imageList.forEach(image => {
+preload(image)
+});
+function preload(url) {
+new Image().src = url;
+}
+
 
 // INITIALIZE SWIPER
 let swiper = new Swiper('.blog-slider', {
@@ -41,18 +53,6 @@ function changeBackground(slideIndex) {
     document.body.style.backgroundColor = "#000";
     document.body.style.backgroundImage = "url(./assets/images/spaceinvaders-bg.jpg)";
   }
-}
-
-// PRELOAD IMAGES
-imageList = [
-"./assets/images/marioworld1-bg.jpg",
-"./assets/images/spaceinvaders-bg.jpg"
-]
-imageList.forEach(image => {
-preload(image)
-});
-function preload(url) {
-new Image().src = url;
 }
 
 //////////////////// DISABLE MOUSE SCROLL - START /////////////////////////////
