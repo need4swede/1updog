@@ -1,14 +1,3 @@
-// PRELOAD IMAGES
-imageList = [
-  "./assets/images/mariobros-bg.jpg",
-  "./assets/images/zelda-bg.jpg"
-]
-imageList.forEach(image => {
-  preload(image)
-});
-function preload(url) {
-  new Image().src = url;
-}
 
 // INITIALIZE SWIPER
 let swiper = new Swiper('.blog-slider', {
