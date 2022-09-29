@@ -19,5 +19,11 @@ function fade2black(){
 
 // LOAD ARCADE PAGE
 function loadArcade(){
-    window.location.href = `${(window.location.href).replace('index.html', 'arcade.html')}`
+    if (window.location.href.includes("https://www.1updog.com/")){
+        window.location.href = `${(window.location.href).replace('https://www.1updog.com/', 'https://www.1updog.com/arcade.html')}`;
+    }
+    else {
+        iframe = document.getElementsByClassName('iframe');
+        iframe.src = "https://www.1updog.com/arcade.html"
+    }
 }
