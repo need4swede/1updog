@@ -1,6 +1,5 @@
 
 // INITIALIZE SWIPER
-
 let swiper = new Swiper('.blog-slider', {
     spaceBetween: 30,
     effect: 'fade',
@@ -15,8 +14,7 @@ let swiper = new Swiper('.blog-slider', {
     }
 });
 
-//////////////////// KEYBOARD NAVIGATION - START ////////////////////////////////
-
+// NAVIGATE SLIDES WITH ARROW KEYS
 $("body").keydown(function(e) {
     if(e.keyCode == 38) { // top
         swiper.slidePrev();
@@ -26,14 +24,40 @@ $("body").keydown(function(e) {
     }
 });
 
-//////////////////// KEYBOARD NAVIGATION - END /////////////////////////////////
+// DETECT SLIDE CHANGES
+swiper.on('transitionEnd', function() {
+  changeBackground(swiper.realIndex)
+});
 
+// UPDATE BACKGROUND BASED ON SLIDE
+function changeBackground(slideIndex) {
+  if (slideIndex === 0) {
+    document.body.style.backgroundColor = "#6e86ff";
+    document.body.style.backgroundImage = "url(./assets/images/mariobros-bg.jpg)";
+  }
+  if (slideIndex === 1) {
+    document.body.style.backgroundColor = "#226288";
+    document.body.style.backgroundImage = "url(./assets/images/zelda-bg.jpg)";
+  }
+}
 
+// PRELOAD IMAGES
+imageList = [
+  "./assets/images/mariobros-bg.jpg",
+  "./assets/images/zelda-bg.jpg"
+]
+imageList.forEach(image => {
+  preload(image)
+});
+function preload(url) {
+  new Image().src = url;
+}
 
 //////////////////// DISABLE MOUSE SCROLL - START /////////////////////////////
 
 // left: 37, up: 38, right: 39, down: 40,
 // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+
 let keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
 function preventDefault(e) {
@@ -77,40 +101,3 @@ function enableScroll() {
 disableScroll()
 
 //////////////////// DISABLE MOUSE SCROLL - END /////////////////////////////
-
-
-//////////////////// READ CURRENT SLIDE - START /////////////////////////////
-
-// GET INIT SLIDE
-console.log(`Initial Slide: ${swiper.realIndex}`);
-changeBackground(swiper.realIndex);
-
-// DETECT SLIDE CHANGES
-swiper.on('transitionEnd', function() {
-    console.log('Slide Changed To:', swiper.realIndex);
-    changeBackground(swiper.realIndex)
-});
-
-//////////////////// READ CURRENT SLIDE - END //////////////////////////////
-
-
-//////////////////// UPDATE BACKGROUND - START /////////////////////////////
-
-function changeBackground(slideIndex) {
-    if (slideIndex === 0) {
-        document.body.style.backgroundImage = "url(./assets/images/mariobros-bg.jpg)";
-        document.body.style.backgroundPosition = "center center";
-        document.body.style.backgroundSize = "cover";
-        document.body.style.backgroundRepeat = "no-repeat";
-    }
-    if (slideIndex === 1) {
-        document.body.style.backgroundImage = "url(./assets/images/zelda-bg.jpg)";
-        document.body.style.backgroundPosition = "center center";
-        document.body.style.backgroundSize = "cover";
-        document.body.style.backgroundRepeat = "no-repeat";
-    }
-}
-
-//////////////////// UPDATE BACKGROUND - END //////////////////////////////
-
-
